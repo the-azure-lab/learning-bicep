@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "functions": [],
+  "resources": [
+    {
+      "type": "Microsoft.Compute/availabilitySets",
+      "apiVersion": "2020-06-01",
+      "location": "westeurope",
+      "name": "myavset",
+      "properties": {
+        "platformFaultDomainCount": 5,
+        "platformUpdateDomainCount": 2
+      }
+    }
+  ]
+}
