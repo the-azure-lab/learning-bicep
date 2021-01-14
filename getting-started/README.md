@@ -1,11 +1,9 @@
 # Getting started with bicep
 
-[[_TOC_]]
-
-## Step 1: Get the bicep CLI
+## Step 1: Install the bicep CLI
 The first thing you need to get started with bicep is to download the bicep CLI from github (https://github.com/Azure/bicep).  You can do this to your local machine or to a container.
 
-### Work in a container
+### Install bicep in a container (work from a container)
 
 If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it only requires that you have Docker Desktop installed, or some other method of running the container). This is my preferred method as it makes it easier to clean up installed software (and your machine does not become bloated with software).
 
