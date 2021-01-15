@@ -22,5 +22,6 @@ Here are the modules I have currently written. I would recommend to look at thes
 - Chapter 5: [Functions](https://github.com/the-azure-lab/learning-bicep/blob/main/functions/README.md)
 - Chapter 6: [Modules](https://github.com/the-azure-lab/learning-bicep/blob/main/modules/README.md)
 - Chapter 7: [Putting it all together](https://github.com/the-azure-lab/learning-bicep/blob/main/putting-it-all-together/README.md)
-- Chapter 8: [Learning bicep by examples](https://github.com/the-azure-lab/learning-bicep/blob/main/bicep-examples/README.md)
+- Chapter 8: [Examples](https://github.com/the-azure-lab/learning-bicep/blob/main/bicep-examples/README.md)
+    - AKS cluster, Virtual Machines with extensions, Application solutions
 - [The Azure bicep modules library](https://github.com/the-azure-lab/learning-bicep/blob/main/modules-library/README.md)
