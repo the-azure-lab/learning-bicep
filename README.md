@@ -1,6 +1,6 @@
 # Learning Bicep
 
-This series of videos and examples contains everything you need to know to master bicep deployments.
+This series of videos and examples contains everything you need to know to master bicep deployments. And it is all for free.
 
 Here are the modules I have currently written. I would recommend to look at these in the order below, but if you are already familiar with some of the topics you could just jump around. Let me know if there are specific topics missing that you would have liked to see covered in a video.  
 
