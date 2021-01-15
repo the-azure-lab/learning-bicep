@@ -4,14 +4,14 @@ You want to get started playing around with bicep, but you are not sure where to
 
 ## Step 1: Install the bicep CLI
 
-The first thing you need to do, to get started with bicep, is to get the bicep CLI from Github (https://github.com/Azure/bicep). You can install to your local computer diectly, or you can use a container.
+The first thing you need to do, to get started with bicep, is to get the bicep CLI. Based on your preference you can install this directly to your local computer, or you can install it into a container.
 
 ### Install bicep in a container (work from a container)
 
-If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it only requires that you have Docker Desktop installed, or some other method of running the container). This is my preferred method as it makes it easier to clean up installed software (and your machine does not become bloated with software).
+If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it requires that you have i.e Docker Desktop installed and running). This is a good choice if you want to have a separation between your dev projects and software installed on your machine as it makes it easier to clean up afterwards.
 
 ```powershell
-# start the container
+# download the image and start a container
 docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu:18.04 bash
 ```
 
@@ -21,7 +21,7 @@ Inside the container you run the comands below to install bicep and the az cli.
 apt-get update && apt-get install -y curl libcurl4 libicu60 libunwind8 libssl1.0
 
 # Install the Azure CLI
-apt-get update && curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Install bicep
 curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
@@ -32,9 +32,11 @@ mv ./bicep /usr/local/bin/bicep
 bicep --version
 ```
 
+For more information on working from a container with bicep please check out the [learning-bicep/docker-container/README.md](https://github.com/the-azure-lab/learning-bicep/blob/main/docker-container/README.md).
+
 ### Install bicep locally
 
-If you prefer to have bicep installed locally run the commands below based on your operating system.
+If you prefer to have bicep installed directly on your machine run the commands below based on your operating system (or run the install.ps1 script located in this folder).
 
 On Windows:
 ```powershell
