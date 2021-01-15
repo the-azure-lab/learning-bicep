@@ -13,7 +13,7 @@ This repo contains everything you need to know to master bicep deployments.
 
 Here are the modules I have currently written. I would recommend to look at these in the order below, but if you are already familiar with some of the topics you could just jump around. Let me know if there are specific topics missing that you would have liked to see covered in a video.  
 
-- Chapter 1: Getting started
+- Chapter 1: [Getting started](../getting-started/README.md)
 - Chapter 2: The basics
 - Chapter 3: Modules
 - Chapter 4: Putting it all together
