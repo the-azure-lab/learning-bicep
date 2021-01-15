@@ -1,19 +1,22 @@
 # Getting started with bicep
 
+You want to get started playing around with bicep, but you are not sure where to start?
+
 ## Step 1: Install the bicep CLI
-The first thing you need to get started with bicep is to download the bicep CLI from github (https://github.com/Azure/bicep).  You can do this to your local machine or to a container.
+
+The first thing you need to do, to get started with bicep, is to get the bicep CLI from Github (https://github.com/Azure/bicep). You can install to your local computer diectly, or you can use a container.
 
 ### Install bicep in a container (work from a container)
 
 If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it only requires that you have Docker Desktop installed, or some other method of running the container). This is my preferred method as it makes it easier to clean up installed software (and your machine does not become bloated with software).
 
-```
+```powershell
 # start the container
 docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu:18.04 bash
 ```
 
-Inside the container you run the following comands to install bicep.
-```
+Inside the container you run the comands below to install bicep and the az cli.
+```sh
 # Install curl & required libraries
 apt-get update && apt-get install -y curl libcurl4 libicu60 libunwind8 libssl1.0
 
@@ -34,7 +37,7 @@ bicep --version
 If you prefer to have bicep installed locally run the commands below based on your operating system.
 
 On Windows:
-```
+```powershell
 # Create the install folder
 $installPath = "$env:USERPROFILE\.bicep"
 $installDir = New-Item -ItemType Directory -Path $installPath -Force
@@ -50,11 +53,11 @@ if (-not $env:path.Contains($installPath)) { $env:path += ";$installPath" }
 
 # Verify you can now access the 'bicep' command.
 bicep --help
-# Done!
+
 ```
 
 On Linux:
-```
+```sh
 # Install bicep
 sudo curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
 sudo chmod +x ./bicep \
@@ -63,17 +66,16 @@ sudo mv ./bicep /usr/local/bin/bicep
 
 ## Step 2: Get the bicep VSCode plugin
 
-The second thing you need to do to get started is to get the bicep VSCode plugin. This will give you the intellisense and the formatting you need to get started.
+The second thing you need to do to get started is to get the bicep VSCode plugin. This will give you the intellisense, code completion and the formatting you need to get started.
 
 - Go to extensions in VScode and search for bicep.
 - Install the latest release of the Bicep extension.
 
-
 ## Step 3: Test that it is working
 
-Creat a file called main.bicep and add the content below. 
+Creat a file called main.bicep and add the content below.
 
-```
+```yaml
 resource myavailabilityset 'Microsoft.Compute/availabilitySets@2020-06-01' = {
   location: 'westeurope'
   name: 'myavset'
@@ -90,7 +92,7 @@ bicep build main.bicep
 ```
 The main.bicep file should compile without errors and you should now see a main.json file in your folder.
 
-```
+```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
@@ -110,10 +112,14 @@ The main.bicep file should compile without errors and you should now see a main.
 }
 ```
 
+```sh
+az deployment group create --resource-group MyFirstBicepResourceGroup --template-uri https://github.com/the-azure-lab/learning-bicep/getting-started/main.json
 ```
-az group deployment create -g MyFirstBicepResourceGroup --template-uri https://github.com/the-azure-lab/learning-bicep/getting-started/main.json
 
+```sh
+az deployment group create --resource-group MyFirstBicepResourceGroup --template-file ./main.json
 ```
 
+* **IMPORTANT**: At the time of writing the Azure CLI or the Az Powershell commands does not support deploying bicep files directly, but this is planned to be supported in the near future.
 
-In the next modules we will look at how additional options of deploying to Azure.
+In the next video we will look at additional options of deploying to Azure.
