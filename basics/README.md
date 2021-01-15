@@ -9,11 +9,11 @@ With this abstraction, all the types, apiVersions, and properties that are valid
 The Azure Bicep code is converted into an ARM Template. Then, the resulting ARM Template is used to deploy the Azure resources.
 From a tooling perspective the target it that you will be able to deploy bicep files directly using the standard Az Cli or Az powershell deploy commands.
 
-[Bicep DSL](https://github.com/the-azure-lab/learning-bicep/.images/azure-bicep-highlevel.png)
+[Bicep DSL](https://github.com/the-azure-lab/learning-bicep/blob/main/.images/azure-bicep-highlevel.png)
 
 ## Basic bicep elements
 
-bicep has some basic elements that you need to understand. If you get these you will pretty soon master bicep development.
+bicep has some basic elements that you need to understand. If you get these you will pretty soon master bicep development. (if you are familiar with ARM templates these should all be very familiar to you).
 
 - Parameters
 - Variables
