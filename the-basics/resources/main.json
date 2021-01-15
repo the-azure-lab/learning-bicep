@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "westeurope"
+    },
+    "name": {
+      "type": "string",
+      "defaultValue": "mynsg001"
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {
+        "environment": "dev"
+      }
+    },
+    "securityRules": {
+      "type": "array",
+      "defaultValue": []
+    }
+  },
+  "functions": [],
+  "variables": {
+    "cleanname": "[toLower(parameters('name'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2020-06-01",
+      "name": "[variables('cleanname')]",
+      "tags": "[parameters('tags')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": "[parameters('securityRules')]"
+      }
+    }
+  ],
+  "outputs": {
+    "nsgid": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('cleanname'))]"
+    }
+  }
+}
