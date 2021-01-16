@@ -6,7 +6,7 @@ The ultimate goal and the main motivationbehind the Bicep project is a need to m
 Azure Bicep works as a transparent abstraction layer on top of ARM templates. Anything that can be done with ARM Templates can be done with Azure Bicep.
 With this abstraction, all the types, apiVersions, and properties that are valid within ARM Templates are also automatically valid with Azure Bicep.
 
-The Azure Bicep code is converted into an ARM Template. Then, the resulting ARM Template is used to deploy the Azure resources.
+Bicep code is converted to an ARM Template. The resulting ARM Template (JSON) is then sent to the Azure Resource Manager to deploy the resources.
 
 From a tooling perspective bicep files will most likely be deployable using the commonly known Az Cli or Az powershell deploy commands (used for deploying ARM templates).
 
