@@ -6,7 +6,7 @@ You want to get started playing around with bicep, but you are not sure where to
 
 The first thing you need to do, to get started with bicep, is to get the bicep CLI. Based on your preference you can install this directly to your local computer, or you can install it into a container.
 
-### Install bicep in a container (work from a container)
+### Install bicep in a container (do deployments from inside the container)
 
 If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it requires that you have i.e Docker Desktop installed and running). This is a good choice if you want to have a separation between your dev projects and software installed on your machine as it makes it easier to clean up afterwards.
 
@@ -73,7 +73,7 @@ The second thing you need to do to get started is to get the bicep VSCode plugin
 - Go to extensions in VScode and search for bicep.
 - Install the latest release of the Bicep extension.
 
-## Step 3: Test that it is working
+## Step 3: Verify that bicep is working
 
 Creat a file called main.bicep and add the content below.
 
@@ -92,7 +92,7 @@ Run the following command.
 ```
 bicep build main.bicep
 ```
-The main.bicep file should compile without errors and you should now see a main.json file in your folder.
+The main.bicep file should compile without errors and you should now see a `main.json` file in your folder. This is the template that can be sent to the Azure Resource Manager API.
 
 ```json
 {
@@ -114,9 +114,13 @@ The main.bicep file should compile without errors and you should now see a main.
 }
 ```
 
+Deploy the template (directly from the github repo).
+
 ```sh
 az deployment group create --resource-group MyFirstBicepResourceGroup --template-uri https://github.com/the-azure-lab/learning-bicep/getting-started/main.json
 ```
+
+Deploy the template from the local main.json.
 
 ```sh
 az deployment group create --resource-group MyFirstBicepResourceGroup --template-file ./main.json
