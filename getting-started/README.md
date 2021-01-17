@@ -1,4 +1,4 @@
-# Getting started with bicep
+# Getting started with bicep in 1-2-3
 
 You want to get started playing around with bicep, but you are not sure where to start?
 
@@ -6,37 +6,9 @@ You want to get started playing around with bicep, but you are not sure where to
 
 The first thing you need to do, to get started with bicep, is to get the bicep CLI. Based on your preference you can install this directly to your local computer, or you can install it into a container.
 
-### Install bicep in a container (do deployments from inside the container)
-
-If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it requires that you have i.e Docker Desktop installed and running). This is a good choice if you want to have a separation between your dev projects and software installed on your machine as it makes it easier to clean up afterwards.
-
-```powershell
-# download the image and start a container
-docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu:18.04 bash
-```
-
-Inside the container you run the comands below to install bicep and the az cli.
-```sh
-# Install curl & required libraries
-apt-get update && apt-get install -y curl libcurl4 libicu60 libunwind8 libssl1.0
-
-# Install the Azure CLI
-curl -sL https://aka.ms/InstallAzureCLIDeb | bash
-
-# Install bicep
-curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
-chmod +x ./bicep
-mv ./bicep /usr/local/bin/bicep
-
-# Check versions
-bicep --version
-```
-
-For more information on working from a container with bicep please check out the [learning-bicep/docker-container/README.md](https://github.com/the-azure-lab/learning-bicep/blob/main/docker-container/README.md).
-
 ### Install bicep locally
 
-If you prefer to have bicep installed directly on your machine run the commands below based on your operating system (or run the install.ps1 script located in this folder).
+If you prefer to have bicep installed directly on your machine run the set of Windows or Linux commands below (or run the install.ps1 script located in this folder).
 
 On Windows:
 ```powershell
@@ -66,9 +38,39 @@ sudo chmod +x ./bicep \
 sudo mv ./bicep /usr/local/bin/bicep
 ```
 
+### Install bicep in a container (do deployments from inside the container)
+
+If you do not want to install stuff directly on your host you can do all of the excercises below in a container (it requires that you have i.e Docker Desktop installed and running). This is a good choice if you want to have a separation between your dev projects and software installed on your machine as it makes it easier to clean up afterwards.
+
+```powershell
+# download the image and start a container
+docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu:18.04 bash
+```
+
+Inside the container you run the comands below to install bicep and the az cli.
+```sh
+# Install curl & required libraries
+apt-get update && apt-get install -y curl libcurl4 libicu60 libunwind8 libssl1.0
+
+# Install the Azure CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
+# Install bicep
+curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+chmod +x ./bicep
+mv ./bicep /usr/local/bin/bicep
+
+# Check versions
+bicep --version
+```
+
+For more information on working from a container with bicep please check out the [learning-bicep/docker-container/README.md](https://github.com/the-azure-lab/learning-bicep/blob/main/docker-container/README.md).
+
+
+
 ## Step 2: Get the bicep VSCode plugin
 
-The second thing you need to do to get started is to get the bicep VSCode plugin. This will give you the intellisense, code completion and the formatting you need to get started.
+The second thing you need to do to get started is to get the bicep VSCode plugin. This will give you the intellisense, code completion and the formatting you need to get started. This is a must.
 
 - Go to extensions in VScode and search for bicep.
 - Install the latest release of the Bicep extension.
@@ -89,10 +91,10 @@ resource myavailabilityset 'Microsoft.Compute/availabilitySets@2020-06-01' = {
 ```
 
 Run the following command.
-```
+```powershell
 bicep build main.bicep
 ```
-The main.bicep file should compile without errors and you should now see a `main.json` file in your folder. This is the template that can be sent to the Azure Resource Manager API.
+The main.bicep file should compile without errors and you should now see a `main.json` file in your folder. This is the JSON template that will be sent to the Azure Resource Manager API.
 
 ```json
 {
