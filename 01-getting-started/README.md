@@ -2,7 +2,7 @@
 
 You want to get started playing around with bicep, but you are not sure where to start?
 
-Learning objectives:
+## Learning objectives:
 
 - Install the bicep CLI and the VSCode plugin.
 - Compile and deploy the first bicep file
