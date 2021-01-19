@@ -13,13 +13,13 @@ From a tooling perspective bicep files will eventually (most likely) be directly
 
 ## Learning objectives
 
-- Resources (resources)
-- Parameters (param)
-- Variables (var)
-- Outputs (output)
+- Resources (´resource´)
+- Parameters (´param´)
+- Variables (´var´)
+- Outputs (´output´)
 - [Using the VScode extension](../from-scratch/README.md)
 
-If you haven't already, follow [these instructions](../01-getting-started/README.md) to install the bicep CLI and VS Code extension.
+If you haven't already check out the getting bicep basics video and/or follow [these instructions](../01-getting-started/README.md) to install the bicep CLI and VS Code extension.
 
 ## Adding resources
 
