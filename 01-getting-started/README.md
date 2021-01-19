@@ -1,4 +1,4 @@
-# Getting started with bicep in 1-2-3
+# Getting started with bicep
 
 You want to get started playing around with bicep, but you are not sure where to start?
 
