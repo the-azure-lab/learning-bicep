@@ -10,7 +10,7 @@ You want to get started playing around with bicep, but you are not sure where to
 
 ## Step 1: Install the bicep CLI
 
-The first thing you need to do, to get started with bicep, is to get the bicep CLI. Based on your preference you can install this directly to your local computer, or you can install it into a container. We will revisit how you can easily use bicep in a container.
+The first thing you need to do, is to install the bicep CLI. Based on your preference you can install this directly to your local computer, or you can install it in a container. We will revisit how you can easily use bicep in a container.
 
 ### Install bicep locally
 
