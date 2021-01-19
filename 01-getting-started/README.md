@@ -33,8 +33,8 @@ if (-not $currentPath.Contains("%USERPROFILE%\.bicep")) { setx PATH ($currentPat
 if (-not $env:path.Contains($installPath)) { $env:path += ";$installPath" }
 
 # Verify you can now access the 'bicep' command.
+bicep --version
 bicep --help
-
 ```
 
 On Linux:
@@ -136,6 +136,9 @@ Deploy the template from the local main.json.
 ```powershell
 $rgname = "bicep-demo"
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile ./main.json
+
+# verify
+Get-AzAvailabilitySet -ResourceGroupName $rgname | Format-Table ResourceGroupName,Name,Sku
 ```
 
 ```sh
