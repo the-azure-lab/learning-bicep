@@ -8,8 +8,8 @@ Here are the modules currently available. I would recommend to read these in the
     - Installation, container setup, vscode
 - Chapter 2: [Basics](https://github.com/the-azure-lab/learning-bicep/blob/main/02-basics/README.md)
     - Resources, parameters, variables, outputs
-- Chapter 3: [Conditions](https://github.com/the-azure-lab/learning-bicep/blob/main/conditions/README.md)
-- Chapter 4: [Loops](https://github.com/the-azure-lab/learning-bicep/blob/main/loops/README.md)
+- Chapter 3: [Conditions](https://github.com/the-azure-lab/learning-bicep/blob/main/03-conditions/README.md)
+- Chapter 4: [Loops](https://github.com/the-azure-lab/learning-bicep/blob/main/04-loops/README.md)
 - Chapter 5: [Functions](https://github.com/the-azure-lab/learning-bicep/blob/main/functions/README.md)
 - Chapter 6: [Modules](https://github.com/the-azure-lab/learning-bicep/blob/main/modules/README.md)
 - Chapter 7: [Putting it all together](https://github.com/the-azure-lab/learning-bicep/blob/main/putting-it-all-together/README.md)

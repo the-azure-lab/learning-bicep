@@ -13,11 +13,11 @@ From a tooling perspective bicep files will eventually (most likely) be directly
 
 ## Learning objectives
 
-- Resources (´resource´)
-- Parameters (´param´)
-- Variables (´var´)
-- Outputs (´output´)
-- [Using the VScode extension](../from-scratch/README.md)
+- How to define resources (´resource´)
+- How to define arameters (´param´)
+- How to define variables (´var´)
+- How to define output (´output´)
+- [How to use the VScode extension](../from-scratch/README.md)
 
 If you haven't already check out the getting bicep basics video and/or follow [these instructions](../01-getting-started/README.md) to install the bicep CLI and VS Code extension.
 
@@ -218,4 +218,13 @@ Notice that you can easily reference the resource `Id` from the symbolic name of
     }
   }
 }
+```
+
+Verify the bicep template.
+
+```powershell
+bicep build .\main.bicep
+$rgname = "bicep-demo"  
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile ./main.json
+Get-AzNetworkSecurityGroup -ResourceGroupName $rgname | Format-Table ResourceGroupName,Name
 ```
